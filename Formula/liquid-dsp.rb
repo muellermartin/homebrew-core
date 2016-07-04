@@ -21,6 +21,10 @@ class LiquidDsp < Formula
   end
 
   def install
+    # Build failed on OS X Mavericks, this might help
+    # according to https://github.com/OP2/PyOP2/issues/471
+    ENV.append "CFLAGS", "-Wa,-q"
+
     system "./reconf"
     system "./configure", "--prefix=#{prefix}"
     # Note: "make install" in one step does fail
