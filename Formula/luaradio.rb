@@ -3,6 +3,7 @@ class Luaradio < Formula
   homepage "http://luaradio.io/"
   url "https://github.com/vsergeev/luaradio/archive/v0.1.0.tar.gz"
   sha256 "4423f94c0bb259952eae7db11e4db4509dfa7c6e205798c35a095050c530212b"
+  head "https://github.com/vsergeev/luaradio.git"
 
   depends_on "pkg-config" => :build
   depends_on "luajit"
