@@ -16,9 +16,7 @@ class Luaradio < Formula
   end
 
   test do
-    # Create text file which will be read and processed by LuaRadio
     (testpath/"hello").write("Hello, world!")
-    # Read from file, convert byte stream to chars and output them
     (testpath/"test.lua").write <<-EOS.undent
       local radio = require('radio')
 
