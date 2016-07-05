@@ -40,7 +40,6 @@ class Luaradio < Formula
       top:run()
     EOS
 
-    assert_equal "Hello, world!",
-      shell_output("#{bin}/luaradio test.lua")
+    assert_equal "Hello, world!", shell_output("#{bin}/luaradio test.lua")
   end
 end
