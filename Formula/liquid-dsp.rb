@@ -7,7 +7,6 @@ class LiquidDsp < Formula
   depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "fftw" => :recommended
-  # libfec could be an optional dependency, but it's not available, yet
 
   fails_with :clang do
     cause <<-EOS.undent
