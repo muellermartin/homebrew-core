@@ -11,6 +11,13 @@ class Luaradio < Formula
 
   def install
     cd "embed" do
+      # Ensure file placement is compatible with HOMEBREW_SANDBOX.
+      inreplace "Makefile" do |s|
+        s.gsub! "install -d $(DESTDIR)$(INSTALL_CMOD)",
+                "install -d $(PREFIX)/lib/lua/5.1"
+        s.gsub! "$(DESTDIR)$(INSTALL_CMOD)/radio.so",
+                "$(PREFIX)/lib/lua/5.1/radio.so"
+      end
       system "make", "install", "PREFIX=#{prefix}"
     end
   end
