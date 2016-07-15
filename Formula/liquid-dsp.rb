@@ -3,6 +3,7 @@ class LiquidDsp < Formula
   homepage "http://liquidsdr.org/"
   url "https://github.com/jgaeddert/liquid-dsp/archive/v1.2.0.tar.gz"
   sha256 "783854b63f5e9a9830dcd95b2c1d5c0bef7d10d22a0e27844a354b59283b6de3"
+  head "https://github.com/jgaeddert/liquid-dsp.git"
 
   depends_on "automake" => :build
   depends_on "autoconf" => :build
