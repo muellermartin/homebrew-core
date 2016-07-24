@@ -19,6 +19,8 @@ class LiquidDsp < Formula
     system "./reconf"
     system "./configure", "--prefix=#{prefix}"
     # Note: "make install" in one step does fail
+    # This is reported upstream:
+    # https://github.com/jgaeddert/liquid-dsp/issues/52
     system "make"
     system "make", "install"
   end
