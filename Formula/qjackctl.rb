@@ -15,13 +15,21 @@ class Qjackctl < Formula
   depends_on "qt5"
   depends_on "jack"
 
+  # Fixes varaible length array error with LLVM/Clang
+  # Reported upstream: https://github.com/rncbc/qjackctl/issues/17
+  patch do
+    url "https://patch-diff.githubusercontent.com/raw/rncbc/qjackctl/pull/18.patch"
+    sha256 "cbb7cc72e0086b8e6df24c8c3a462dc0e9297f095573adb7a3cf98502a1902d4"
+  end
+
   def install
     system "./autogen.sh"
     system "./configure", "--disable-debug",
                           "--enable-qt5",
                           "--disable-dbus",
                           "--disable-xunique",
-                          "--prefix=#{prefix}"
+                          "--prefix=#{prefix}",
+                          "--with-qt5=#{Formula["qt5"].prefix}"
 
     system "make", "install"
     prefix.install bin/"qjackctl.app"
