@@ -23,6 +23,7 @@ class Gdal < Formula
   option "with-mdb", "Build with Access MDB driver (requires Java 1.6+ JDK/JRE, from Apple or Oracle)."
   option "with-libkml", "Build with Google's libkml driver (requires libkml --HEAD or >= 1.3)"
   option "with-swig-java", "Build the swig java bindings"
+  option "without-python", "Build without python2 support"
 
   deprecated_option "enable-opencl" => "with-opencl"
   deprecated_option "enable-armadillo" => "with-armadillo"
@@ -84,7 +85,6 @@ class Gdal < Formula
     depends_on "swig" => :build
   end
 
-  option "without-python", "Build without python2 support"
   depends_on :python => :optional if MacOS.version <= :snow_leopard
   depends_on :python3 => :optional
   depends_on :fortran => :build if build.with?("python") || build.with?("python3")
