@@ -3,7 +3,7 @@ class SstpClient < Formula
   homepage "https://sstp-client.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/sstp-client/sstp-client/sstp-client-1.0.13.tar.gz"
   sha256 "961258fca0795d8ad60b047942cf7cb53d025d353fd1e4ba08c2b75799f5321b"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
   version_scheme 1
 
   livecheck do
