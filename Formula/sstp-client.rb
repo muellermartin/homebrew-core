@@ -4,6 +4,7 @@ class SstpClient < Formula
   url "https://downloads.sourceforge.net/project/sstp-client/sstp-client/sstp-client-1.0.15.tar.gz"
   sha256 "8484aa51fbfbe418a0ebad58ad20a8ee1c46ed71f800be18bcd23b42e6baad64"
   license "GPL-2.0-or-later"
+  version_scheme 1
 
   livecheck do
     url :stable
